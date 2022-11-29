@@ -73,16 +73,18 @@ if (empty($_SESSION['username'])) {
         $query    = mysqli_query($koneksi, $sql);
         while ($data = mysqli_fetch_array($query)) {
         ?>
-            <div class="containerFillx text-light text-center">
-                <?= $data['nama_menu']; ?>
-            </div>
-            <div class="deskripsi text-dark">
+            <center>
+                <div class="containerFillx text-light text-center">
+                    <?= $data['nama_menu']; ?>
+                </div>
+            </center>
+            <div class="deskripsi text-light bg-primary" style="border-radius: 10px; padding: 10px; font-size: 25px;">
                 <?= $data['deskripsi'];  ?>
             </div>
-            <div class="harga text-dark">
+            <div class="harga text-light bg-danger" style="border-radius: 10px; padding: 10px;">
                 Harga: <?= $data['harga'];  ?> per orang.
             </div>
-            <div class="desk_menu text-dark">
+            <div class="desk_menu text-light bg-success" style="border-radius: 10px; padding: 10px;">
                 Deskripsi:<br>
                 <?= $data['desk_menu1'];  ?><br>
                 <?= $data['desk_menu2'];  ?>

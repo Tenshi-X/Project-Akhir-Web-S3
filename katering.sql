@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 07:26 PM
+-- Generation Time: Nov 29, 2022 at 09:47 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -130,8 +130,9 @@ INSERT INTO `pesanan` (`id_pesanan`, `id_user`, `id_menu`, `id_lauk`, `id_sayur`
 (10, 3, 3, 3, 3, 3, 10, 2, '2022-12-02', '2022-11-30 00:48:20'),
 (11, 3, 4, 4, 1, 1, 9, 2, '2022-12-03', '2022-11-30 01:15:53'),
 (13, 3, 7, 7, 3, 3, 40, 2, '2022-12-06', '2022-11-30 01:17:56'),
-(14, 3, 9, 9, 3, 5, 60, 1, '2022-12-02', '2022-11-30 01:18:08'),
-(15, 6, 6, 6, 5, 3, 60, 1, '2022-12-09', '2022-11-30 01:18:39');
+(23, 3, 5, 5, 3, 2, 20, 2, '2022-12-02', '2022-11-30 02:32:36'),
+(24, 3, 7, 7, 3, 2, 30, 1, '2022-12-09', '2022-11-30 02:45:57'),
+(25, 3, 5, 5, 4, 2, 40, 1, '2022-12-02', '2022-11-30 03:03:54');
 
 -- --------------------------------------------------------
 
@@ -195,7 +196,8 @@ CREATE TABLE `transaksi` (
 INSERT INTO `transaksi` (`id_transaksi`, `id_pesanan`, `tanggal_lunas`) VALUES
 (2, 10, '2022-11-30'),
 (3, 11, '2022-11-30'),
-(4, 13, '2022-11-30');
+(4, 13, '2022-11-30'),
+(5, 23, '2022-11-30');
 
 -- --------------------------------------------------------
 
@@ -307,7 +309,7 @@ ALTER TABLE `minuman`
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `sayur`
@@ -325,7 +327,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
