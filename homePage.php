@@ -68,15 +68,18 @@ if (empty($_SESSION['username'])) {
                 </div>
             </div>
             <div class="col-5">
-                <div>
-                    <h4 class="text-light" style="margin-top: 200px;">
-                        Cari Catering Murah tapi Nggak Murahan?
-                    </h4>
-                    <h6 class="text-light" style=" margin-top: 10px;">
+                <div style="margin-right: 40px;">
+                    <h1 style="margin-top: 200px; color: yellow; text-align: right;">
+                        Cari Catering Murah tapi 
+                    </h1>
+                    <h1 style="margin-top: 5px; color: yellow; text-align: right;">
+                        Nggak Murahan?
+                    </h1>
+                    <h4 class="text-light" style=" margin-top: 10px; text-align: right;">
                         SeSa Catering Solusinya.
-                    </h6>
+                    </h4>
                     <a href="orderPage.php">
-                        <button type="button" class="btn btn-success" style=" margin-top: 15px;">Order Now</button>
+                        <button type="button" class="btn btn-success" style=" margin-top: 15px;  margin-left: 385px;">Order Now</button>
                     </a>
                 </div>
             </div>

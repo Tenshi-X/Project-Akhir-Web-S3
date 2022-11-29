@@ -10,7 +10,5 @@ $sql = "UPDATE pesanan SET id_sayur='$id_sayur', id_minuman='$id_minuman', porsi
 $query = mysqli_query($koneksi, $sql);
 
 if ($query) {
-    header("location:jadwalPraktikum.php");
-} else {
-    echo "location:jadwalPraktikum.php?message=edit_fail";
+    header("location:reservationPage.php");
 }

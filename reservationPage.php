@@ -60,23 +60,43 @@ if (empty($_SESSION['username'])) {
             <button type="button" class="btn btn-outline-danger">Logout</button>
         </a>
     </nav>
-    <div style="column-count: 3;">
+    <div style="column-count: 2; margin-bottom: 10px;">
         <center>
             <div>
                 <a href="reservationPage.php">
-                    <button type="button" class="btn btn-primary text-light">Belum Bayar</button>
+                    <button type="button" class="btn btn-primary text-light" style=" width: 450px; margin-left: 120px;">Belum Bayar</button>
                 </a>
             </div>
             <div>
                 <a href="lunasPage.php">
-                    <button type="button" class="btn btn-success text-light">Sudah Bayar</button>
+                    <button type="button" class="btn btn-success text-light" style=" width: 450px; margin-right: 120px;">Sudah Bayar</button>
                 </a>
             </div>
         </center>
-
     </div>
     <div style="background-color: rgb(201, 150, 204); width: 1250px; height: 600px; margin-left: 120px; border-radius: 10px; ">
-        <div style="width: 1200px; height: 450px;">
+        <div class="row" style="background-color: black; border-radius: 10px; height: 80px; margin-bottom: 5px;">
+            <div class="text-light col-2" style="margin-top: 20px;">
+                <center>
+                    Tanggal Pesan
+                </center>
+            </div>
+            <div class="text-light col-3" style="margin-top: 20px;">
+                <center>
+                    Nama Menu
+                </center>
+            </div>
+            <div class="text-light col-1" style="margin-top: 20px;">
+                    Total Harga
+            </div>
+            <div class="text-light col-2" style="margin-top: 20px;">
+                    Waktu Acara
+            </div>
+            <div class="text-light col-4" style="margin-top: 20px;">
+                    Action
+            </div>
+        </div>
+        <div style="width: 1200px; height: 450px; padding: 6px;">
             <?php
             include('connect.php');
             $username = $_SESSION['username'];
@@ -95,28 +115,41 @@ if (empty($_SESSION['username'])) {
                     $total_harga = $porsi * $harga;
                     ?>
                 </div>
-                <div style="column-count: 3;">
-                    <div class="containerFill text-light"">
-                    <?= $data['nama_menu']; ?>
-                </div>
-                <div class=" text-light">
+                <div class="row" style="background-color:  rgb(61, 44, 141); border-radius: 10px; height: 80px; margin-left: 30px; margin-top: 10px; margin-bottom: 5px;">
+                    <div class="text-light col-2" style="margin-top: 20px;">
+                        <?= $data['tglwaktu_pesan']; ?>
+                    </div>
+                    <div class="text-light col-3" style="margin-top: 20px;">
+                        <?= $data['nama_menu']; ?>
+                    </div>
+                    <div class=" text-light col-1" style="margin-top: 20px;">
                         <?= $total_harga ?>
                     </div>
-                </div>
-                <div>
-                    <a href="editPesanan.php?id_pesanan=<?= $data['id_pesanan'] ?>">
-                        <button type="button" class="btn btn-primary">Edit</button>
-                    </a>
-                </div>
-                <div>
-                    <a href="deletePesanan.php?id_pesanan=<?= $data['id_pesanan'] ?>">
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </a>
-                </div>
-                <div>
-                    <a href="lunasProcess.php?id_pesanan=<?= $data['id_pesanan'] ?>">
-                        <button type="button" class="btn btn-success">Bayar</button>
-                    </a>
+                    <div class=" text-light col-2" style="margin-top: 20px;">
+                        <?= $data['tglwaktu_acara'] ?>
+                    </div>
+                    <div class="col-1">
+                        <div>
+                            <a href="editPesanan.php?id_pesanan=<?= $data['id_pesanan'] ?>">
+                                <button type="button" class="btn btn-primary" style="width: 85px; margin-top: 20px;">Edit</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <div>
+                            <a href="deletePesanan.php?id_pesanan=<?= $data['id_pesanan'] ?>">
+                                <button type="button" class="btn btn-danger" style="width: 85px; margin-top: 20px;">Delete</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div>
+                            <a href="lunasProcess.php?id_pesanan=<?= $data['id_pesanan'] ?>">
+                                <button type="button" class="btn btn-success" style="width: 125px; margin-top: 20px;">Bayar</button>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             <?php } ?>
         </div>

@@ -75,76 +75,63 @@ if (empty($_SESSION['username'])) {
         $query_id = mysqli_query($koneksi, $sql_id);
         $data_id = mysqli_fetch_array($query_id);
         $query    = mysqli_query($koneksi, $sql);
-        while ($data = mysqli_fetch_array($query)) {
+        $data = mysqli_fetch_array($query);
         ?>
-            <div class="containerFilly text-light text-center">
-                <?= $data['nama_menu']; ?>
+        <div class="containerFilly text-light text-center">
+            <?= $data['nama_menu']; ?>
+        </div>
+        <form method="POST" action="editProcess.php" style="margin-left: 20px;">
+            <div>
+                <input type="hidden" id="id_pesanan" name="id_pesanan" class="form-control" value="<?= $id_pesanan ?>">
             </div>
-            <form method="POST" action="orderProcess.php" style="margin-left: 20px;">
-                <div>
-                    <input type="hidden" id="id_user" name="id_user" class="form-control" value="<?= $data_id['id_user'] ?>">
-                </div>
-                <div>
-                    <input type="hidden" id="id_menu" name="id_menu" class="form-control" value="<?= $data['id_menu'] ?>">
-                </div>
-                <div>
-                    <input type="hidden" id="id_lauk" name="id_lauk" class="form-control" value="<?= $data['id_lauk'] ?>">
-                </div>
-                <div class="row mt-3">
+            <div class="row mt-3">
+                <label class="col-2 col-form-label" style="border: 2px; border-color: black">Sayur :</label>
+                <select name="id_sayur" style="background-color: white; " class="col-4 btn" data-bs-toggle="dropdown" required="">
                     <?php
-                    include 'connect.php';
-                    $user = $_SESSION['username'];
+                    include('connect.php');
+
+                    $sql    = "SELECT * FROM sayur";
+                    $query  = mysqli_query($koneksi, $sql);
+
+                    while ($sayur = mysqli_fetch_array($query)) {
+
                     ?>
-                </div>
-                <div class="row mt-3">
-                    <label class="col-2 col-form-label" style="border: 2px; border-color: black">Sayur :</label>
-                    <select name="id_sayur" style="background-color: white; " class="col-4 btn" data-bs-toggle="dropdown" required="" name="sayur">
-                        <?php
-                        include('connect.php');
+                        <option align="left" value=<?= $sayur['id_sayur']; ?> <?= $data["id_sayur"] == $sayur["id_sayur"] ? "selected" : "" ?>><?= $sayur['sayur']; ?> </option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class="row mt-3">
+                <label class="col-2 col-form-label" style="border: 2px; border-color: black">Minuman : </label>
+                <select name="id_minuman" style="background-color: white; " class="col-4 btn" data-bs-toggle="dropdown" required="">:
+                    <?php
+                    include('connect.php');
 
-                        $sql    = "SELECT * FROM sayur";
-                        $query  = mysqli_query($koneksi, $sql);
+                    $sql    = "SELECT * FROM minuman";
+                    $query  = mysqli_query($koneksi, $sql);
 
-                        while ($sayur = mysqli_fetch_array($query)) {
+                    while ($minuman = mysqli_fetch_array($query)) {
 
-                        ?>
-                            <option align="left" value=<?= $sayur['id_sayur']; ?> <?= $data["id_sayur"] == $sayur["id_sayur"] ? "selected" : "" ?>><?= $sayur['sayur']; ?> </option>
-                        <?php } ?>
-                    </select>
+                    ?>
+                        <option align="left" value=<?= $minuman['id_minuman']; ?> <?= $data["id_minuman"] == $minuman["id_minuman"] ? "selected" : "" ?>><?= $minuman['minuman']; ?> </option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class="row mt-3">
+                <label class="col-2 col-form-label" style="border: 2px; border-color: black">Porsi : </label>
+                <div class="col-4">
+                    <input type="number" name="porsi" class="form-control" value="<?= $data['porsi']; ?>">
                 </div>
-                <div class="row mt-3">
-                    <label class="col-2 col-form-label" style="border: 2px; border-color: black">Minuman : </label>
-                    <select name="id_minuman" style="background-color: white; " class="col-4 btn" data-bs-toggle="dropdown" required="">:
-                        <?php
-                        include('connect.php');
-
-                        $sql    = "SELECT * FROM minuman";
-                        $query  = mysqli_query($koneksi, $sql);
-
-                        while ($minuman = mysqli_fetch_array($query)) {
-
-                        ?>
-                            <option align="left" value=<?= $minuman['id_minuman']; ?> <?= $data["id_minuman"] == $minuman["id_minuman"] ? "selected" : "" ?>><?= $minuman['minuman']; ?> </option>
-                        <?php } ?>
-                    </select>
+            </div>
+            <div class="row mt-3">
+                <label class="col-2 col-form-label" style="border: 2px; border-color: black">Waktu Acara : </label>
+                <div class="col-4">
+                    <input type="date" name="waktu_acara" class="form-control" value="<?= $data['tglwaktu_acara']; ?>">
                 </div>
-                <div class="row mt-3">
-                    <label class="col-2 col-form-label" style="border: 2px; border-color: black">Porsi : </label>
-                    <div class="col-4">
-                        <input type="number" name="porsi" class="form-control">
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <label class="col-2 col-form-label" style="border: 2px; border-color: black">Waktu Acara : </label>
-                    <div class="col-4">
-                        <input type="date" name="waktu_acara" class="form-control">
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <button style="width: 50%; background-color:rgb(22, 33, 62);" type="submit" class="btn btn-outline-light buttonSize" value="ORDER">ORDER</button>
-                </div>
-            </form>
-        <?php } ?>
+            </div>
+            <div class="row mt-3">
+                <button style="width: 50%; background-color:rgb(22, 33, 62);" type="submit" class="btn btn-outline-light buttonSize" value="ORDER">ORDER</button>
+            </div>
+        </form>
     </div>
     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
 </body>
