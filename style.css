@@ -32,14 +32,22 @@
     height: 180px;
     border-radius: 40px;
     width: 210px;
-    margin-left: 10%; 
+    margin-left: 12%; 
+}
+.containerFill2{
+    font-size: large; 
+    background-color: rgb(61, 44, 141); 
+    height: 180px;
+    border-radius: 40px;
+    width: 210px;
+    margin-left: 27%; 
 }
 .containerFillx{
     font-size: x-large; 
     background-color: rgb(61, 44, 141); 
     height: 70px;
     border-radius: 40px;
-    width: 350px;
+    width: 40%;
     margin-left: 20px;
     padding-top: 15px;
 }
@@ -52,6 +60,15 @@
     margin-left: 20px;
     padding-top: 10px;
 }
+.containerFill-deskA{
+    background-color: rgb(22, 33, 62); 
+    height: 47%;
+    width: 95%;
+    border-radius: 40px;
+    margin-left: 2.5%;
+    margin-top: 2%;
+    padding:2%;
+}
 .containerBackgroundI{
     font-size: large; 
     margin-top: 20px; 
@@ -59,7 +76,6 @@
     background-color: rgb(201, 150, 204);
     border-radius: 10px;
     padding-bottom: 20px;
-    padding-left: 30px
 }
 .containerBackground2{
     font-size: large; 
@@ -94,4 +110,20 @@
     border-radius: 8px;
     margin-top: 5px;
     margin-left: 45px;
+}
+.detailContainer{
+    font-size: xx-large; 
+    background-color: rgb(61, 44, 141); 
+    height: 130px;
+    border-radius: 30px;
+    width: 50%;
+    margin-left: 20px;
+    padding-top: 15px;
+}
+.detailImage{
+    height: 250px;
+    width: 250px;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-left: 70px;
 }

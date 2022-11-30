@@ -25,22 +25,22 @@ if (empty($_SESSION['username'])) {
                 <ul class="navbar-nav" style="margin-left: 10px; margin-top: 5px; background-color: rgb(83, 52, 131); border-radius: 40px;">
                     <li class="nav-item">
                         <a class="nav-link active text-light" style=" margin-left: 25px; margin-right: 10px; font-size: large;" aria-current="page" href="homePage.php">
-                            <iconify-icon icon="material-symbols:home" inline style="color: white; margin-left: 23%" width="20" height="20"></iconify-icon>Home
+                            <iconify-icon icon="material-symbols:home" inline style="color: white; margin-left: 20%" width="20" height="20"></iconify-icon>Home
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active text-light" style=" margin-right: 10px; font-size: large;" aria-current="page" href="menuPage.php">
-                            <iconify-icon icon="ic:baseline-menu-book" inline style="color: white; margin-left: 21%" width="20" height="20"></iconify-icon>Menu
+                            <iconify-icon icon="ic:baseline-menu-book" inline style="color: white; margin-left: 20%" width="20" height="20"></iconify-icon>Menu
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" style="font-size: large;" href="orderPage.php">
-                            <iconify-icon inline icon="tabler:cup" style="color: white; margin-left: 22%" width="20" height="20"></iconify-icon>Order
+                            <iconify-icon inline icon="tabler:cup" style="color: white; margin-left: 20%" width="20" height="20"></iconify-icon>Order
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" style=" margin-right: 740px; font-size: large;" href="reservationPage.php">
-                            <iconify-icon inline icon="icon-park-outline:transaction-order" style="color: white; margin-left: 35%" width="20" height="20"></iconify-icon>Reservation
+                            <iconify-icon inline icon="icon-park-outline:transaction-order" style="color: white; margin-left: 30%" width="20" height="20"></iconify-icon>Reservation
                         </a>
                     </li>
                     <li class="nav-item">
@@ -86,13 +86,16 @@ if (empty($_SESSION['username'])) {
                     Nama Menu
                 </center>
             </div>
+            <div class="text-light col-1" style="margin-top: 20px; margin-left: 10px;">
+                Porsi
+            </div>
             <div class="text-light col-1" style="margin-top: 20px;">
                 Total Harga
             </div>
             <div class="text-light col-2" style="margin-top: 20px;">
                 Waktu Acara
             </div>
-            <div class="text-light col-4" style="margin-top: 20px;">
+            <div class="text-light col-2" style="margin-top: 20px;">
                 Tanggal Lunas
             </div>
         </div>
@@ -119,16 +122,19 @@ if (empty($_SESSION['username'])) {
                     <div class="text-light col-2" style="margin-top: 20px;">
                         <?= $data['tglwaktu_pesan']; ?>
                     </div>
-                    <div class="text-light col-3" style="margin-top: 20px;">
+                    <div class="text-light col-3" style="margin-top: 20px; margin-left: 10px;">
                         <?= $data['nama_menu']; ?>
+                    </div>
+                    <div class=" text-light col-1" style="margin-top: 20px; margin-right: 10px;">
+                        <?= $porsi ?>
                     </div>
                     <div class=" text-light col-1" style="margin-top: 20px;">
                         <?= $total_harga ?>
                     </div>
-                    <div class=" text-light col-2" style="margin-top: 20px;">
+                    <div class=" text-light col-2" style="margin-top: 20px; margin-left: 10px;">
                         <?= $data['tglwaktu_acara'] ?>
                     </div>
-                    <div class=" text-light col-2" style="margin-top: 20px;">
+                    <div class=" text-light col-2" style="margin-top: 20px; margin-left: 20px;">
                         <?= $data['tanggal_lunas'] ?>
                     </div>
                 </div>

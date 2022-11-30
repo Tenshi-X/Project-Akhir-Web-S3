@@ -25,22 +25,22 @@ if (empty($_SESSION['username'])) {
                 <ul class="navbar-nav" style="margin-left: 10px; margin-top: 5px; background-color: rgb(83, 52, 131); border-radius: 40px;">
                     <li class="nav-item">
                         <a class="nav-link active text-light" style=" margin-left: 25px; margin-right: 10px; font-size: large;" aria-current="page" href="homePage.php">
-                            <iconify-icon icon="material-symbols:home" inline style="color: white; margin-left: 23%" width="20" height="20"></iconify-icon>Home
+                            <iconify-icon icon="material-symbols:home" inline style="color: white; margin-left: 20%" width="20" height="20"></iconify-icon>Home
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active text-light" style=" margin-right: 10px; font-size: large;" aria-current="page" href="menuPage.php">
-                            <iconify-icon icon="ic:baseline-menu-book" inline style="color: white; margin-left: 21%" width="20" height="20"></iconify-icon>Menu
+                            <iconify-icon icon="ic:baseline-menu-book" inline style="color: white; margin-left: 20%" width="20" height="20"></iconify-icon>Menu
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" style="font-size: large;" href="orderPage.php">
-                            <iconify-icon inline icon="tabler:cup" style="color: white; margin-left: 22%" width="20" height="20"></iconify-icon>Order
+                            <iconify-icon inline icon="tabler:cup" style="color: white; margin-left: 20%" width="20" height="20"></iconify-icon>Order
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" style=" margin-right: 740px; font-size: large;" href="reservationPage.php">
-                            <iconify-icon inline icon="icon-park-outline:transaction-order" style="color: white; margin-left: 35%" width="20" height="20"></iconify-icon>Reservation
+                            <iconify-icon inline icon="icon-park-outline:transaction-order" style="color: white; margin-left: 30%" width="20" height="20"></iconify-icon>Reservation
                         </a>
                     </li>
                     <li class="nav-item">
@@ -63,12 +63,9 @@ if (empty($_SESSION['username'])) {
     <div class="container">
         <div class="row">
             <div class="col-3">
-                <div style="background-color: rgb(61, 44, 141); border-radius: 10px; height: 1750px; width: 360px;">
+                <div style="background-color: rgb(61, 44, 141); border-radius: 10px; height: 1600px; width: 360px;">
                     <div class="sticky-top" style="margin-left: 10px; margin-top: 30px;">
-                        <form class="d-flex" role="search" style=" padding: 20px;">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-success" type="submit">Search</button>
-                        </form>
+                        <br>
                         <div>
                             <a href="#ayam">
                                 <button type="button" class="btn" style="margin-left: 20px; margin-bottom: 10px; background-color: rgb(201,150,204); padding-right: 242px;">
@@ -78,21 +75,21 @@ if (empty($_SESSION['username'])) {
                         </div>
                         <div>
                             <a href="#ikan">
-                                <button type="button" class="btn text-dark" style="margin-left: 20px; margin-bottom: 10px; background-color: rgb(201,150,204); padding-right: 252px;">
+                                <button type="button" class="btn" style="margin-left: 20px; margin-bottom: 10px; background-color: rgb(201,150,204); padding-right: 252px;">
                                     > Ikan
                                 </button>
                             </a>
                         </div>
                         <div>
                             <a href="#telur">
-                                <button type="button" class="btn text-dark" style="margin-left: 20px; margin-bottom: 10px; background-color: rgb(201,150,204); padding-right: 247px;">
+                                <button type="button" class="btn" style="margin-left: 20px; margin-bottom: 10px; background-color: rgb(201,150,204); padding-right: 247px;">
                                     > Telur
                                 </button>
                             </a>
                         </div>
                         <div>
                             <a href="#daging">
-                                <button type="button" class="btn text-dark" style="margin-left: 20px; margin-bottom: 10px; background-color: rgb(201,150,204); padding-right: 235px;">
+                                <button type="button" class="btn" style="margin-left: 20px; margin-bottom: 10px; background-color: rgb(201,150,204); padding-right: 235px;">
                                     > Daging
                                 </button>
                             </a>
@@ -134,10 +131,10 @@ if (empty($_SESSION['username'])) {
                         include('connect.php');
 
                         $sql    = "SELECT * FROM menu where nama_menu like '%ikan%'";
-                        $query    = mysqli_query($koneksi, $sql);
+                        $query  = mysqli_query($koneksi, $sql);
                         while ($data = mysqli_fetch_array($query)) {
                         ?>
-                            <div class="containerFill">
+                            <div class="containerFill2">
                                 <a href="detailPage.php?id_menu=<?= $data['id_menu']; ?>">
                                     <div style="width: 50px; height: 50px;">
                                         <img src="assets/<?= $data['id_menu']; ?>.jpg" alt="assets/<?= $data['id_menu']; ?>.jpeg" class="imageStyle">
@@ -160,7 +157,7 @@ if (empty($_SESSION['username'])) {
                         $query    = mysqli_query($koneksi, $sql);
                         while ($data = mysqli_fetch_array($query)) {
                         ?>
-                            <div class="containerFill">
+                            <div class="containerFill2">
                                 <a href="detailPage.php?id_menu=<?= $data['id_menu']; ?>">
                                     <div style="width: 50px; height: 50px;">
                                         <img src="assets/<?= $data['id_menu']; ?>.jpg" alt="assets/<?= $data['id_menu']; ?>.jpeg" class="imageStyle">

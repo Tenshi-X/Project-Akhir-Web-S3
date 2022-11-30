@@ -25,22 +25,22 @@ if (empty($_SESSION['username'])) {
                 <ul class="navbar-nav" style="margin-left: 10px; margin-top: 5px; background-color: rgb(83, 52, 131); border-radius: 40px;">
                     <li class="nav-item">
                         <a class="nav-link active text-light" style=" margin-left: 25px; margin-right: 10px; font-size: large;" aria-current="page" href="homePage.php">
-                            <iconify-icon icon="material-symbols:home" inline style="color: white; margin-left: 23%" width="20" height="20"></iconify-icon>Home
+                            <iconify-icon icon="material-symbols:home" inline style="color: white; margin-left: 20%" width="20" height="20"></iconify-icon>Home
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active text-light" style=" margin-right: 10px; font-size: large;" aria-current="page" href="menuPage.php">
-                            <iconify-icon icon="ic:baseline-menu-book" inline style="color: white; margin-left: 21%" width="20" height="20"></iconify-icon>Menu
+                            <iconify-icon icon="ic:baseline-menu-book" inline style="color: white; margin-left: 20%" width="20" height="20"></iconify-icon>Menu
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" style="font-size: large;" href="orderPage.php">
-                            <iconify-icon inline icon="tabler:cup" style="color: white; margin-left: 22%" width="20" height="20"></iconify-icon>Order
+                            <iconify-icon inline icon="tabler:cup" style="color: white; margin-left: 20%" width="20" height="20"></iconify-icon>Order
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" style=" margin-right: 740px; font-size: large;" href="reservationPage.php">
-                            <iconify-icon inline icon="icon-park-outline:transaction-order" style="color: white; margin-left: 35%" width="20" height="20"></iconify-icon>Reservation
+                            <iconify-icon inline icon="icon-park-outline:transaction-order" style="color: white; margin-left: 30%" width="20" height="20"></iconify-icon>Reservation
                         </a>
                     </li>
                     <li class="nav-item">
@@ -80,7 +80,7 @@ if (empty($_SESSION['username'])) {
             <div>
                 <input type="hidden" id="id_pesanan" name="pesanan" value="<?= $data['id_pesanan'] ?>">
             </div>
-            <div class="row mt-3">             
+            <div class="row mt-3">
                 <label class="col-2 col-form-label" style="border: 2px; border-color: black">Sayur :</label>
                 <select name="sayur" style="background-color: white; " class="col-4 btn" data-bs-toggle="dropdown" required="">
                     <?php

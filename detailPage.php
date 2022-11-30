@@ -25,22 +25,22 @@ if (empty($_SESSION['username'])) {
                 <ul class="navbar-nav" style="margin-left: 10px; margin-top: 5px; background-color: rgb(83, 52, 131); border-radius: 40px;">
                     <li class="nav-item">
                         <a class="nav-link active text-light" style=" margin-left: 25px; margin-right: 10px; font-size: large;" aria-current="page" href="homePage.php">
-                            <iconify-icon icon="material-symbols:home" inline style="color: white; margin-left: 23%" width="20" height="20"></iconify-icon>Home
+                            <iconify-icon icon="material-symbols:home" inline style="color: white; margin-left: 20%" width="20" height="20"></iconify-icon>Home
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active text-light" style=" margin-right: 10px; font-size: large;" aria-current="page" href="menuPage.php">
-                            <iconify-icon icon="ic:baseline-menu-book" inline style="color: white; margin-left: 21%" width="20" height="20"></iconify-icon>Menu
+                            <iconify-icon icon="ic:baseline-menu-book" inline style="color: white; margin-left: 20%" width="20" height="20"></iconify-icon>Menu
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" style="font-size: large;" href="orderPage.php">
-                            <iconify-icon inline icon="tabler:cup" style="color: white; margin-left: 22%" width="20" height="20"></iconify-icon>Order
+                            <iconify-icon inline icon="tabler:cup" style="color: white; margin-left: 20%" width="20" height="20"></iconify-icon>Order
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" style=" margin-right: 740px; font-size: large;" href="reservationPage.php">
-                            <iconify-icon inline icon="icon-park-outline:transaction-order" style="color: white; margin-left: 35%" width="20" height="20"></iconify-icon>Reservation
+                            <iconify-icon inline icon="icon-park-outline:transaction-order" style="color: white; margin-left: 30%" width="20" height="20"></iconify-icon>Reservation
                         </a>
                     </li>
                     <li class="nav-item">
@@ -60,7 +60,7 @@ if (empty($_SESSION['username'])) {
             <button type="button" class="btn btn-outline-danger">Logout</button>
         </a>
     </nav>
-    <div style=" border-radius: 10px; background-color: rgb(201, 150, 204); height: 580px; width: 1215px; margin-left: 135px; margin-top:30px">
+    <div style=" border-radius: 10px; background-color: rgb(201, 150, 204); height: 650px; width: 1215px; margin-left: 135px; margin-top:30px">
         <a href="menuPage.php">
             <button type="button" class="btn" style="color:  rgb(183, 62, 62); font-size: x-large;">
                 <iconify-icon inline icon="material-symbols:arrow-back-rounded" width="30" height="24"></iconify-icon>Back
@@ -73,21 +73,28 @@ if (empty($_SESSION['username'])) {
         $query    = mysqli_query($koneksi, $sql);
         while ($data = mysqli_fetch_array($query)) {
         ?>
-            <center>
-                <div class="containerFillx text-light text-center">
-                    <?= $data['nama_menu']; ?>
+            <div style="column-count: 2;">
+                <div class="row">
+                    <div class="col-6 detailContainer text-light text-center" style="margin-top: 60px; margin-left: 240px;">
+                        <?= $data['nama_menu']; ?>
+                    </div>
+                    <div class="col-6">
+                        <img src="assets/<?= $data['id_menu']; ?>.jpg" alt="assets/<?= $data['id_menu']; ?>.jpeg" class="detailImage">
+                    </div>
                 </div>
-            </center>
-            <div class="deskripsi text-light bg-primary" style="border-radius: 10px; padding: 10px; font-size: 25px;">
-                <?= $data['deskripsi'];  ?>
             </div>
-            <div class="harga text-light bg-danger" style="border-radius: 10px; padding: 10px;">
-                Harga: <?= $data['harga'];  ?> per orang.
-            </div>
-            <div class="desk_menu text-light bg-success" style="border-radius: 10px; padding: 10px;">
-                Deskripsi:<br>
-                <?= $data['desk_menu1'];  ?><br>
-                <?= $data['desk_menu2'];  ?>
+            <div class="containerFill-deskA">
+                <div class="deskripsi text-light">
+                    " <?= $data['deskripsi'];  ?>"
+                </div>
+                <div class="harga text-light text-center">
+                    Harga: <?= $data['harga'];  ?> per orang.
+                </div>
+                <div class="desk_menu text-light">
+                    Deskripsi:<br>
+                    <?= $data['desk_menu1'];  ?><br>
+                    <?= $data['desk_menu2'];  ?>
+                </div>
             </div>
         <?php } ?>
     </div>
