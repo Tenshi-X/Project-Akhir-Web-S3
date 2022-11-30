@@ -61,19 +61,15 @@ if (empty($_SESSION['username'])) {
         </a>
     </nav>
     <div class="containerBackground2 text-center" style="background-color: rgb(201, 150, 204); padding: 10px; height: 500px; width: 900px; margin-left:290px; ">
-        <a href="orderPage.php">
+        <a href="reservationPage.php">
             <button type="button" class="btn" style="color:  rgb(183, 62, 62); font-size: x-large; margin-right: 770px;">
                 <iconify-icon inline icon="material-symbols:arrow-back-rounded" style="color: #b73e3e;" width="24" height="24"></iconify-icon>Back
             </button>
         </a>
         <?php
         include('connect.php');
-        $user = $_SESSION['username'];
         $id_pesanan = $_GET['id_pesanan'];
         $sql    = "SELECT * FROM pesanan INNER JOIN menu ON pesanan.id_menu = menu.id_menu where id_pesanan=$id_pesanan";
-        $sql_id = "SELECT * FROM user where username = '$user'";
-        $query_id = mysqli_query($koneksi, $sql_id);
-        $data_id = mysqli_fetch_array($query_id);
         $query    = mysqli_query($koneksi, $sql);
         $data = mysqli_fetch_array($query);
         ?>
@@ -82,11 +78,11 @@ if (empty($_SESSION['username'])) {
         </div>
         <form method="POST" action="editProcess.php" style="margin-left: 20px;">
             <div>
-                <input type="hidden" id="id_pesanan" name="id_pesanan" class="form-control" value="<?= $id_pesanan ?>">
+                <input type="hidden" id="id_pesanan" name="pesanan" value="<?= $data['id_pesanan'] ?>">
             </div>
-            <div class="row mt-3">
+            <div class="row mt-3">             
                 <label class="col-2 col-form-label" style="border: 2px; border-color: black">Sayur :</label>
-                <select name="id_sayur" style="background-color: white; " class="col-4 btn" data-bs-toggle="dropdown" required="">
+                <select name="sayur" style="background-color: white; " class="col-4 btn" data-bs-toggle="dropdown" required="">
                     <?php
                     include('connect.php');
 
@@ -102,7 +98,7 @@ if (empty($_SESSION['username'])) {
             </div>
             <div class="row mt-3">
                 <label class="col-2 col-form-label" style="border: 2px; border-color: black">Minuman : </label>
-                <select name="id_minuman" style="background-color: white; " class="col-4 btn" data-bs-toggle="dropdown" required="">:
+                <select name="minuman" style="background-color: white; " class="col-4 btn" data-bs-toggle="dropdown" required="">:
                     <?php
                     include('connect.php');
 
@@ -129,7 +125,7 @@ if (empty($_SESSION['username'])) {
                 </div>
             </div>
             <div class="row mt-3">
-                <button style="width: 50%; background-color:rgb(22, 33, 62);" type="submit" class="btn btn-outline-light buttonSize" value="ORDER">ORDER</button>
+                <button style="width: 50%; background-color:rgb(22, 33, 62);" type="submit" class="btn btn-outline-light buttonSize" value="edit">Edit</button>
             </div>
         </form>
     </div>
