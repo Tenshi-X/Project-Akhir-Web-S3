@@ -83,7 +83,9 @@ if (empty($_SESSION['username'])) {
             while ($data = mysqli_fetch_array($query)) {
             ?>
                 <div class="list-group">
-                    <a href="orderForm.php?id_menu=<?= $data['id_menu'] ?>" class="list-group-item list-group-item-action text-light" style="background-color:rgb(61, 44, 141); border-radius: 10px; margin-bottom:10px;"><?= $data['nama_menu']; ?></a>
+                    <div>
+                        <a href="orderForm.php?id_menu=<?= $data['id_menu'] ?>" class="list-group-item list-group-item-action text-light" style="background-color:rgb(61, 44, 141); border-radius: 10px; margin-bottom:10px;"><?= $data['nama_menu']; ?></a>
+                    </div>
                 </div>
             <?php } ?>
         </div>

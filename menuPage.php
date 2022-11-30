@@ -71,7 +71,7 @@ if (empty($_SESSION['username'])) {
                         </form>
                         <div>
                             <a href="#ayam">
-                                <button type="button" class="btn text-dark" style="margin-left: 20px; margin-bottom: 10px; background-color: rgb(201,150,204); padding-right: 242px;">
+                                <button type="button" class="btn" style="margin-left: 20px; margin-bottom: 10px; background-color: rgb(201,150,204); padding-right: 242px;">
                                     > Ayam
                                 </button>
                             </a>
@@ -116,7 +116,10 @@ if (empty($_SESSION['username'])) {
                         ?>
                             <div class="containerFill">
                                 <a href="detailPage.php?id_menu=<?= $data['id_menu']; ?>">
-                                    <button type="button" class="btn text-light" style="font-size: large;"><?= $data['nama_menu']; ?></button>
+                                    <div style="width: 50px; height: 50px;">
+                                        <img src="assets/<?= $data['id_menu']; ?>.jpg" alt="assets/<?= $data['id_menu']; ?>.jpeg" class="imageStyle">
+                                    </div>
+                                    <button type="button" class="btn text-light" style="font-size:  17px; margin-top: 70px;"><?= $data['nama_menu']; ?></button>
                                 </a>
                             </div>
                         <?php } ?>
@@ -126,7 +129,7 @@ if (empty($_SESSION['username'])) {
                     <div id="ikan" class="fw-semibold fs-4 mb-1" style="text-decoration-color: rgb(22, 33, 62)">
                         IKAN
                     </div>
-                    <div style="column-count: 3;">
+                    <div style="column-count: 2;">
                         <?php
                         include('connect.php');
 
@@ -136,7 +139,10 @@ if (empty($_SESSION['username'])) {
                         ?>
                             <div class="containerFill">
                                 <a href="detailPage.php?id_menu=<?= $data['id_menu']; ?>">
-                                    <button type="button" class="btn text-light" style="font-size: large;"><?= $data['nama_menu']; ?></button>
+                                    <div style="width: 50px; height: 50px;">
+                                        <img src="assets/<?= $data['id_menu']; ?>.jpg" alt="assets/<?= $data['id_menu']; ?>.jpeg" class="imageStyle">
+                                    </div>
+                                    <button type="button" class="btn text-light" style="font-size:  17px; margin-top: 70px;"><?= $data['nama_menu']; ?></button>
                                 </a>
                             </div>
                         <?php } ?>
@@ -146,7 +152,7 @@ if (empty($_SESSION['username'])) {
                     <div id="telur" class="fw-semibold fs-4 mb-1" style="text-decoration-color: rgb(22, 33, 62)">
                         TELUR
                     </div>
-                    <div style="column-count: 3;">
+                    <div style="column-count: 2;">
                         <?php
                         include('connect.php');
 
@@ -156,7 +162,10 @@ if (empty($_SESSION['username'])) {
                         ?>
                             <div class="containerFill">
                                 <a href="detailPage.php?id_menu=<?= $data['id_menu']; ?>">
-                                    <button type="button" class="btn text-light" style="font-size: large;"><?= $data['nama_menu']; ?></button>
+                                    <div style="width: 50px; height: 50px;">
+                                        <img src="assets/<?= $data['id_menu']; ?>.jpg" alt="assets/<?= $data['id_menu']; ?>.jpeg" class="imageStyle">
+                                    </div>
+                                    <button type="button" class="btn text-light" style="font-size:  17px; margin-top: 65px;"><?= $data['nama_menu']; ?></button>
                                 </a>
                             </div>
                         <?php } ?>
@@ -176,7 +185,10 @@ if (empty($_SESSION['username'])) {
                         ?>
                             <div class="containerFill">
                                 <a href="detailPage.php?id_menu=<?= $data['id_menu']; ?>">
-                                    <button type="button" class="btn text-light" style="font-size: large;"><?= $data['nama_menu']; ?></button>
+                                    <div style="width: 50px; height: 50px;">
+                                        <img src="assets/<?= $data['id_menu']; ?>.jpg" alt="assets/<?= $data['id_menu']; ?>.jpeg" class="imageStyle">
+                                    </div>
+                                    <button type="button" class="btn text-light" style="font-size:  17px; margin-top: 70px;"><?= $data['nama_menu']; ?></button>
                                 </a>
                             </div>
                         <?php } ?>
