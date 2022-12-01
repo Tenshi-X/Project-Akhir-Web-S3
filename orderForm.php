@@ -132,23 +132,23 @@ if (empty($_SESSION['username'])) {
             <div class="row mt-3">
                 <label class="col-2 col-form-label" style="border: 2px; border-color: black">Porsi : </label>
                 <div class="col-5">
-                    <input type="number" name="porsi" class="form-control">
+                    <input type="number" name="porsi" class="form-control" required="">
                 </div>
             </div>
             <div class="row mt-3">
                 <label class="col-2 col-form-label" style="border: 2px; border-color: black">Tanggal Acara : </label>
                 <div class="col-5">
-                    <input type="date" name="tgl_acara" class="form-control">
+                    <input type="date" name="tgl_acara" class="form-control" required="">
                 </div>
             </div>
             <div class="row mt-3">
                 <label class="col-2 col-form-label" style="border: 2px; border-color: black">Waktu Acara : </label>
                 <div class="col-5">
-                    <input type="time" name="waktu_acara" class="form-control">
+                    <input type="time" name="waktu_acara" class="form-control" required="">
                 </div>
             </div>
             <div class="row mt-3">
-                <button style="width: 55%; background-color:rgb(22, 33, 62); margin-left: 3%" type="submit" class="btn btn-outline-light buttonSize" value="ORDER">ORDER</button>
+                <button style="width: 55%; background-color:rgb(22, 33, 62); margin-left: 2.7%" type="submit" class="btn btn-outline-light buttonSize" value="ORDER">ORDER</button>
             </div>
             </form>
     </div>

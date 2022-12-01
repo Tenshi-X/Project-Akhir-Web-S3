@@ -82,7 +82,7 @@ if (empty($_SESSION['username'])) {
             </div>
             <div class="row mt-3">
                 <label class="col-2 col-form-label" style="border: 2px; border-color: black">Sayur :</label>
-                <select name="sayur" style="background-color: white; " class="col-4 btn" data-bs-toggle="dropdown" required="">
+                <select name="sayur" style="background-color: white; margin-left: 1.5% " class="col-4 btn" data-bs-toggle="dropdown" required="">
                     <?php
                     include('connect.php');
 
@@ -98,7 +98,7 @@ if (empty($_SESSION['username'])) {
             </div>
             <div class="row mt-3">
                 <label class="col-2 col-form-label" style="border: 2px; border-color: black">Minuman : </label>
-                <select name="minuman" style="background-color: white; " class="col-4 btn" data-bs-toggle="dropdown" required="">:
+                <select name="minuman" style="background-color: white; margin-left: 1.5%" class="col-4 btn" data-bs-toggle="dropdown" required="">:
                     <?php
                     include('connect.php');
 
@@ -114,24 +114,24 @@ if (empty($_SESSION['username'])) {
             </div>
             <div class="row mt-3">
                 <label class="col-2 col-form-label" style="border: 2px; border-color: black">Porsi : </label>
-                <div class="col-4">
-                    <input type="number" name="porsi" class="form-control" value="<?= $data['porsi']; ?>">
+                <div class="col-5">
+                    <input type="number" name="porsi" class="form-control" value="<?= $data['porsi']; ?>" required="">
                 </div>
             </div>
             <div class="row mt-3">
                 <label class="col-2 col-form-label" style="border: 2px; border-color: black">Tanggal Acara : </label>
-                <div class="col-4">
-                    <input type="date" name="tgl_acara" class="form-control" value="<?= $data['tgl_acara']; ?>">
+                <div class="col-5">
+                    <input type="date" name="tgl_acara" class="form-control" value="<?= $data['tgl_acara']; ?>" required="">
                 </div>
             </div>
             <div class="row mt-3">
                 <label class="col-2 col-form-label" style="border: 2px; border-color: black">Waktu Acara : </label>
                 <div class="col-5">
-                    <input type="time" name="waktu_acara" class="form-control" value="<?= $data['waktu_acara']; ?>">
+                    <input type="time" name="waktu_acara" class="form-control" value="<?= $data['waktu_acara']; ?>" required="">
                 </div>
             </div>
             <div class="row mt-3">
-                <button style="width: 50%; background-color:rgb(22, 33, 62);" type="submit" class="btn btn-outline-light buttonSize" value="edit">Edit</button>
+                <button style="width: 55%; background-color:rgb(22, 33, 62); margin-left: 2.7%;" type="submit" class="btn btn-outline-light buttonSize" value="edit">Edit</button>
             </div>
         </form>
     </div>
