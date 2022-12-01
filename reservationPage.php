@@ -60,6 +60,7 @@ if (empty($_SESSION['username'])) {
             <button type="button" class="btn btn-outline-danger">Logout</button>
         </a>
     </nav>
+
     <div style="column-count: 2; margin-bottom: 10px;">
         <center>
             <div>
@@ -72,6 +73,27 @@ if (empty($_SESSION['username'])) {
                     <button type="button" class="btn btn-success text-light" style=" width: 450px; margin-right: 120px;">Sudah Bayar</button>
                 </a>
             </div>
+        </center>
+    </div>
+    <div class="text-light">
+        <center>
+            <?php
+            if (isset($_GET['message'])) {
+                if ($_GET['message'] == "bayarBerhasil") {
+                    echo "Pembayaran Berhasil";
+                } elseif ($_GET['message'] == "bayarGagal") {
+                    echo "Pembayaran Gagal";
+                } elseif ($_GET['message'] == "editBerhasil") {
+                    echo "Edit Data Berhasil";
+                } elseif ($_GET['message'] == "editGagal") {
+                    echo "Edit Data Gagal";
+                } elseif ($_GET['message'] == "hapusBerhasil") {
+                    echo "Hapus Data Berhasil";
+                } elseif ($_GET['message'] == "hapusGagal") {
+                    echo "Hapus Data Gagal";
+                }
+            }
+            ?>
         </center>
     </div>
     <div style="background-color: rgb(201, 150, 204); width: 1250px; height: 1000px; margin-left: 120px; border-radius: 10px; ">
@@ -161,30 +183,7 @@ if (empty($_SESSION['username'])) {
             <?php } ?>
         </div>
     </div>
-    <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-            <div class="toast-body">
-                <?php
-                if (isset($_GET['message'])) {
-                    if ($_GET['message'] == "bayarBerhasil") {
-                        echo "Pembayaran Berhasil";
-                    } elseif ($_GET['message'] == "bayarGagal") {
-                        echo "Pembayaran Gagal";
-                    } elseif ($_GET['message'] == "editBerhasil") {
-                        echo "Edit Data Berhasil";
-                    } elseif ($_GET['message'] == "editGagal") {
-                        echo "Edit Data Gagal";
-                    } elseif ($_GET['message'] == "hapusBerhasil") {
-                        echo "Hapus Data Berhasil";
-                    } elseif ($_GET['message'] == "hapusGagal") {
-                        echo "Hapus Data Gagal";
-                    }
-                }
-                ?>
-            </div>
-            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-    </div>
+
     <script src=" https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js">
     </script>
 </body>

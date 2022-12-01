@@ -60,6 +60,17 @@ if (empty($_SESSION['username'])) {
             <button type="button" class="btn btn-outline-danger">Logout</button>
         </a>
     </nav>
+    <div class="text-light text-center">
+            <?php
+            if (isset($_GET['message'])) {
+                if ($_GET['message'] == "berhasilOrder") {
+                    echo "Orderan berhasil ditambahkan.";
+                } elseif ($_GET['message'] == "gagalOrder") {
+                    echo "Orderan gagal ditambahkan";
+                }
+            }
+            ?>
+    </div>
     <div class="container">
         <div class="containerBackground2 text-center" style=" margin-left: 90px; background-color: rgb(201, 150, 204); padding: 10px;">
             <?php
@@ -75,22 +86,6 @@ if (empty($_SESSION['username'])) {
                     </div>
                 </div>
             <?php } ?>
-        </div>
-    </div>
-    <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-            <div class="toast-body">
-                <?php
-                if (isset($_GET['message'])) {
-                    if ($_GET['message'] == "berhasilOrder") {
-                        echo "Orderan berhasil ditambahkan.";
-                    } elseif ($_GET['message'] == "gagalOrder") {
-                        echo "Orderan gagal ditambahkan";
-                    }
-                }
-                ?>
-            </div>
-            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
     </div>
     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>

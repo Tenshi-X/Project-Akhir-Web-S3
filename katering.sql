@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 07:26 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Generation Time: Dec 01, 2022 at 04:56 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -118,7 +118,8 @@ CREATE TABLE `pesanan` (
   `id_minuman` int(11) NOT NULL,
   `porsi` int(11) NOT NULL,
   `id_status` int(11) NOT NULL,
-  `tglwaktu_acara` date NOT NULL,
+  `tgl_acara` date NOT NULL,
+  `waktu_acara` time NOT NULL,
   `tglwaktu_pesan` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -126,12 +127,13 @@ CREATE TABLE `pesanan` (
 -- Dumping data for table `pesanan`
 --
 
-INSERT INTO `pesanan` (`id_pesanan`, `id_user`, `id_menu`, `id_lauk`, `id_sayur`, `id_minuman`, `porsi`, `id_status`, `tglwaktu_acara`, `tglwaktu_pesan`) VALUES
-(10, 3, 3, 3, 3, 3, 10, 2, '2022-12-02', '2022-11-30 00:48:20'),
-(11, 3, 4, 4, 1, 1, 9, 2, '2022-12-03', '2022-11-30 01:15:53'),
-(13, 3, 7, 7, 3, 3, 40, 2, '2022-12-06', '2022-11-30 01:17:56'),
-(14, 3, 9, 9, 3, 5, 60, 1, '2022-12-02', '2022-11-30 01:18:08'),
-(15, 6, 6, 6, 5, 3, 60, 1, '2022-12-09', '2022-11-30 01:18:39');
+INSERT INTO `pesanan` (`id_pesanan`, `id_user`, `id_menu`, `id_lauk`, `id_sayur`, `id_minuman`, `porsi`, `id_status`, `tgl_acara`, `waktu_acara`, `tglwaktu_pesan`) VALUES
+(10, 3, 3, 3, 3, 3, 10, 2, '2022-12-02', '00:00:00', '2022-11-30 00:48:20'),
+(11, 3, 4, 4, 1, 1, 9, 2, '2022-12-03', '00:00:00', '2022-11-30 01:15:53'),
+(13, 3, 7, 7, 3, 3, 40, 2, '2022-12-06', '00:00:00', '2022-11-30 01:17:56'),
+(14, 3, 9, 9, 3, 5, 60, 2, '2022-12-02', '00:00:00', '2022-11-30 01:18:08'),
+(15, 6, 6, 6, 5, 3, 60, 1, '2022-12-09', '00:00:00', '2022-11-30 01:18:39'),
+(16, 7, 3, 3, 1, 1, 5, 2, '2023-01-07', '11:00:00', '2022-12-01 09:03:03');
 
 -- --------------------------------------------------------
 
@@ -195,7 +197,9 @@ CREATE TABLE `transaksi` (
 INSERT INTO `transaksi` (`id_transaksi`, `id_pesanan`, `tanggal_lunas`) VALUES
 (2, 10, '2022-11-30'),
 (3, 11, '2022-11-30'),
-(4, 13, '2022-11-30');
+(4, 13, '2022-11-30'),
+(5, 14, '2022-12-01'),
+(6, 16, '2022-12-01');
 
 -- --------------------------------------------------------
 
@@ -218,8 +222,9 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id_user`, `username`, `password`, `no_hp`, `alamat`) VALUES
 (1, 'nisa', 'kape', '08580341533', 'Kasihan, Bantul, DIY'),
 (2, 'kape', 'nisa', '0858034XXXX', 'Condongcatur, Sleman, DIY'),
-(3, 'seva', 'seva', '085XXXXXXXX', 'Seturan'),
-(6, 'admin', 'admin', '08463635475', 'temanggung');
+(3, 'Seva', 'seva', '085XXXXXXXX', 'Seturan'),
+(6, 'admin', 'admin', '08463635475', 'temanggung'),
+(7, 'Khairunnisa', 'karima', '08512345678', 'Alkid');
 
 --
 -- Indexes for dumped tables
@@ -307,7 +312,7 @@ ALTER TABLE `minuman`
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `sayur`
@@ -325,13 +330,13 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
