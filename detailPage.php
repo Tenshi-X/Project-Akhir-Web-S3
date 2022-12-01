@@ -98,11 +98,6 @@ if (empty($_SESSION['username'])) {
             </div>
         <?php } ?>
     </div>
-
-
     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
 </body>
-
-</body>
-
 </html>

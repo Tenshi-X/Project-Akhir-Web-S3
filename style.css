@@ -111,6 +111,20 @@
     margin-top: 5px;
     margin-left: 45px;
 }
+.reservationImage{
+    height: 120px;
+    width: 120px;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.lunasImage{
+    height: 120px;
+    width: 120px;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-left: 70px;
+}
 .detailContainer{
     font-size: xx-large; 
     background-color: rgb(61, 44, 141); 

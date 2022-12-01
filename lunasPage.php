@@ -74,32 +74,32 @@ if (empty($_SESSION['username'])) {
             </div>
         </center>
     </div>
-    <div style="background-color: rgb(201, 150, 204); width: 1250px; height: 600px; margin-left: 120px; border-radius: 10px; ">
+    <div style="background-color: rgb(201, 150, 204); width: 1250px; height: 1000px; margin-left: 100px; border-radius: 10px; ">
         <div class="row" style="background-color: black; border-radius: 10px; height: 80px; margin-bottom: 5px;">
-            <div class="text-light col-2" style="margin-top: 20px;">
-                <center>
-                    Tanggal Pesan
-                </center>
+            <div class="text-light text-center col-2" style="margin-top: 20px;">
+                <div>Tanggal Pesan &</div>
+                <div>Waktu Pesan</div>
             </div>
             <div class="text-light col-3" style="margin-top: 20px;">
                 <center>
                     Nama Menu
                 </center>
             </div>
-            <div class="text-light col-1" style="margin-top: 20px; margin-left: 10px;">
+            <div class="text-light col-1" style="margin-top: 20px; margin-left: 5px;">
                 Porsi
             </div>
             <div class="text-light col-1" style="margin-top: 20px;">
                 Total Harga
             </div>
-            <div class="text-light col-2" style="margin-top: 20px;">
-                Waktu Acara
+            <div class="text-light text-center col-2" style="margin-top: 20px; ">
+                <div>Tanggal Acara &</div>
+                <div>Waktu Acara</div>
             </div>
             <div class="text-light col-2" style="margin-top: 20px;">
                 Tanggal Lunas
             </div>
         </div>
-        <div style="width: 1200px; height: 450px; padding: 6px;">
+        <div style="width: 1220px; height: 450px; padding: 6px;">
             <?php
             include('connect.php');
             $username = $_SESSION['username'];
@@ -118,23 +118,26 @@ if (empty($_SESSION['username'])) {
                     $total_harga = $porsi * $harga;
                     ?>
                 </div>
-                <div class="row" style="background-color:  rgb(61, 44, 141); border-radius: 10px; height: 80px; margin-left: 30px; margin-top: 10px; margin-bottom: 5px;">
-                    <div class="text-light col-2" style="margin-top: 20px;">
+                <div class="row" style="background-color:  rgb(61, 44, 141); border-radius: 10px; height: 200px; margin-left: 15px; margin-top: 10px; margin-bottom: 5px;">
+                    <div class="text-light col-2" style="margin-top: 80px;">
                         <?= $data['tglwaktu_pesan']; ?>
                     </div>
-                    <div class="text-light col-3" style="margin-top: 20px; margin-left: 10px;">
-                        <?= $data['nama_menu']; ?>
+                    <div class="text-light text-center col-3" style="margin-top: 20px;">
+                        <div style="width: 50px; height: 50px;">
+                            <img src="assets/<?= $data['id_menu']; ?>.jpg" alt="assets/<?= $data['id_menu']; ?>.jpeg" class="lunasImage">
+                        </div>
+                        <div style="margin-top: 80px; margin-right: 10px"><?= $data['nama_menu']; ?></div>
                     </div>
-                    <div class=" text-light col-1" style="margin-top: 20px; margin-right: 10px;">
+                    <div class=" text-light col-1" style="margin-top: 80px; margin-left: 10px;">
                         <?= $porsi ?>
                     </div>
-                    <div class=" text-light col-1" style="margin-top: 20px;">
+                    <div class=" text-light col-1" style="margin-top: 80px; margin-left: 10px">
                         <?= $total_harga ?>
                     </div>
-                    <div class=" text-light col-2" style="margin-top: 20px; margin-left: 10px;">
-                        <?= $data['tglwaktu_acara'] ?>
+                    <div class=" text-light text-center col-2" style="margin-top: 80px;">
+                        <?= $data['tgl_acara'] ?> <?= $data['waktu_acara'] ?>
                     </div>
-                    <div class=" text-light col-2" style="margin-top: 20px; margin-left: 20px;">
+                    <div class=" text-light col-2" style="margin-top: 80px; margin-left: 20px;">
                         <?= $data['tanggal_lunas'] ?>
                     </div>
                 </div>

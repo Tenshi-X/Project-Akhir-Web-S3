@@ -10,7 +10,7 @@ $query = mysqli_query($koneksi, $sql);
 
 
 if ($query) {
-    header("location:reservationPage.php");
+    header("location:reservationPage.php?message=bayarBerhasil");
 } else {
-    header("location:reservationPage.php");
+    header("location:reservationPage.php?message=bayarGagal");
 }

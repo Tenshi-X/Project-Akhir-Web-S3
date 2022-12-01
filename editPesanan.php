@@ -119,9 +119,15 @@ if (empty($_SESSION['username'])) {
                 </div>
             </div>
             <div class="row mt-3">
-                <label class="col-2 col-form-label" style="border: 2px; border-color: black">Waktu Acara : </label>
+                <label class="col-2 col-form-label" style="border: 2px; border-color: black">Tanggal Acara : </label>
                 <div class="col-4">
-                    <input type="date" name="waktu_acara" class="form-control" value="<?= $data['tglwaktu_acara']; ?>">
+                    <input type="date" name="tgl_acara" class="form-control" value="<?= $data['tgl_acara']; ?>">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <label class="col-2 col-form-label" style="border: 2px; border-color: black">Waktu Acara : </label>
+                <div class="col-5">
+                    <input type="time" name="waktu_acara" class="form-control" value="<?= $data['waktu_acara']; ?>">
                 </div>
             </div>
             <div class="row mt-3">

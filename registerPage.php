@@ -41,7 +41,7 @@
                 <label class="fs-6 text-black">Nomor Handphone</label>
             </div>
             <div class="mb-3 mt-3 form-floating formMargin">
-                <input type="text" class="form-control text-black" name="alamat" placeholder="Alamat">
+                <input type="text" class="form-control text-black" name="alamat" placeholder="Alamat" required="">
                 <label class="fs-6 text-black">Alamat</label>
             </div>
             <br>
